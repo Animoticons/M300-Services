@@ -7,10 +7,10 @@ M300
 
 | Befehl                       | Effekt                         |
 | ---------------------------- |:------------------------------:|
-| git add *Pfad* |: Fügt die Datei dem Index hinzu |
+| git add *Pfad* | Fügt die Datei dem Index hinzu |
 | git add -A | Fügt alle Dateien im Verzeichnis dem Index hinzu |
 | git status   | Zeigt Unterschiede zwischen dem Index und dem aktuellen HEAD commit |
-| Git commit -m "comment"   |: Fügt die Änderungen dem Repository hinzu |
+| Git commit -m "comment"   | Fügt die Änderungen dem Repository hinzu |
 | Git push  | Lädt die Änderungen beim Repository hoch  |
 |  git pull  | Lädt das angegebene Repository herunter |
 |    | |
