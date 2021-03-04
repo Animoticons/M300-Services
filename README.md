@@ -29,13 +29,22 @@ Vagrant ermöglicht es, sehr schnell virtuelle Maschinen auf Basis einer Datei (
 
 | Befehl                       | Effekt                         |
 | ---------------------------- |:------------------------------:|
-| vagrant init | Initialisiert im aktuellen Verzeichnis eine Vagrant-Umgebung und erstellt, falls nicht vorhanden, ein Vagrantfile |
+| vagrant init *NAME* | Initialisiert im aktuellen Verzeichnis eine Vagrant-Umgebung und erstellt, falls nicht vorhanden, ein Vagrantfile |
 | vagrant up | Erzeugt und Konfiguriert eine neue Virtuelle Maschine, basierend auf dem Vagrantfile |
 | vagrant ssh | Baut eine SSH-Verbindung zur gewünschten VM auf |
 | vagrant status | Zeigt den aktuellen Status der VM an |
 | vagrant port | Zeigt die Weitergeleiteten Ports der VM an |
 | vagrant halt | Stoppt die laufende Virtuelle Maschine |
-| vagrant destroy | Stoppt die Virtuelle Maschine und zerstört sie. |
-| vagrant box add *NAME* | Lädt die Box herunter, welche dann mit vagrant init *NAME* und vagrant up gestartet werden kann. |
+| vagrant destroy | Stoppt die Virtuelle Maschine und zerstört sie |
+| vagrant box add *NAME* | Lädt die Box herunter, welche dann mit vagrant init *NAME* und vagrant up gestartet werden kann |
 |  |  |
-|  |  |
+
+#### Vagrant Cloud
+
+| Befehl                       | Effekt                         |
+| ---------------------------- |:------------------------------:|
+| vagrant cloud auth login | Login in vagrant cloud |
+| vagrant cloud auth whoami | Zeigt den momentan eingeloggten Account an |
+| vagrant cloud search *suchbegriff* | Suche in der Vagrant Cloud |
+| vagrant box add *box name* | Download Box mit diesem Box Name |
+

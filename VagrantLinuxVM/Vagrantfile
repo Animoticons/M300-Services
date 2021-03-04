@@ -1,0 +1,18 @@
+
+Vagrant.configure("2") do |config|
+ 
+  config.vm.box = "ubuntu/xenial64"
+  #config.ssh.username = "admin" #Geht nicht
+  
+  config.vm.provider "virtualbox" do |v|
+  v.name = "VagrantLinuxVM" #VM Name setzen
+end
+  
+config.vm.provision "shell", inline: <<-SHELL
+  sudo loadkeys ch  #Keyboard Layout auf CH umstellen
+  sudo apt install ufw -y #Die APT Firewall installieren
+  sudo ufw enable #APT Firewall aktivieren
+  sudo ufw allow from 192.168.255.255 #Dem Subnetz erlauben, eine Verbindung herzustellen
+SHELL
+ 
+end
