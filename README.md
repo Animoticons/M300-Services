@@ -13,9 +13,6 @@ M300
 | Git commit -m "comment"   | Fügt die Änderungen dem Repository hinzu |
 | Git push  | Lädt die Änderungen beim Repository hoch  |
 |  git pull  | Lädt das angegebene Repository herunter |
-|    | |
-|    | |
-|    | |
 
 
 ## Vagrant
@@ -37,7 +34,6 @@ Vagrant ermöglicht es, sehr schnell virtuelle Maschinen auf Basis einer Datei (
 | vagrant halt | Stoppt die laufende Virtuelle Maschine |
 | vagrant destroy | Stoppt die Virtuelle Maschine und zerstört sie |
 | vagrant box add *NAME* | Lädt die Box herunter, welche dann mit vagrant init *NAME* und vagrant up gestartet werden kann |
-|  |  |
 
 #### Vagrant Cloud
 
@@ -48,3 +44,21 @@ Vagrant ermöglicht es, sehr schnell virtuelle Maschinen auf Basis einer Datei (
 | vagrant cloud search *suchbegriff* | Suche in der Vagrant Cloud |
 | vagrant box add *box name* | Download Box mit diesem Box Name |
 
+
+## Vagrantfile
+
+####Festlegen der Box, welche die Maschine nutzen soll:
+
+`config.vm.box = "ubuntu/xenial64"`
+
+####VM Name in VirtualBox festlegen:
+
+`config.vm.provider "virtualbox" do |v|
+  v.name = "VagrantLinuxVM" #VM Name setzen
+end`
+
+####Es besteht auch die Möglichkeit, Linux-Befehle nach der Installation automatisch ausführen zulassen. Dafür wird folgende Struktur verwendet:
+
+`config.vm.provision "shell", inline: <<-SHELL
+ *Befehle Hier*
+SHELL`

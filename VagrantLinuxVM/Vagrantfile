@@ -10,9 +10,30 @@ end
   
 config.vm.provision "shell", inline: <<-SHELL
   sudo loadkeys ch  #Keyboard Layout auf CH umstellen
-  sudo apt install ufw -y #Die APT Firewall installieren
-  sudo ufw enable #APT Firewall aktivieren
+  sudo apt-get update #Paketliste aktualisieren
+  #Apache2 installieren
+  sudo apt-get install apache2 -y
+  #UFW Firewall installieren
+  sudo apt install ufw -y #Die UFW Firewall installieren
+  sudo ufw --force enable #UFW Firewall aktivieren
   sudo ufw allow from 192.168.255.255 #Dem Subnetz erlauben, eine Verbindung herzustellen
+  #Reverse Proxy installieren
+  sudo service apache2 stop #Stop Apache2 um Port freizugeben für nginx
+  sudo apt-get install nginx -y #nginx installation
+  sudo unlink /etc/nginx/sites-enabled/default #virtueller host deaktivieren
+  cd etc/nginx/sites-available/ #In das Verzeichnis wechseln
+  sudo cat >> reverse-proxy.conf << EOF #Reverse-proxy config file beschreiben
+	server {
+    listen 80;
+    location / {
+        proxy_pass http://192.x.x.2;
+    }
+}
+
+EOF
+ sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf #Verknüpfung zur Datei erstellen
+
+  
 SHELL
  
 end
