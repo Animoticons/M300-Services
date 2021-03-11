@@ -47,17 +47,17 @@ Vagrant ermöglicht es, sehr schnell virtuelle Maschinen auf Basis einer Datei (
 
 ## Vagrantfile
 
-####Festlegen der Box, welche die Maschine nutzen soll:
+#### Festlegen der Box, welche die Maschine nutzen soll:
 
 `config.vm.box = "ubuntu/xenial64"`
 
-####VM Name in VirtualBox festlegen:
+#### VM Name in VirtualBox festlegen:
 
 `config.vm.provider "virtualbox" do |v|
   v.name = "VagrantLinuxVM" #VM Name setzen
 end`
 
-####Es besteht auch die Möglichkeit, Linux-Befehle nach der Installation automatisch ausführen zulassen. Dafür wird folgende Struktur verwendet:
+#### Es besteht auch die Möglichkeit, Linux-Befehle nach der Installation automatisch ausführen zulassen. Dafür wird folgende Struktur verwendet:
 
 `config.vm.provision "shell", inline: <<-SHELL
  *Befehle Hier*
