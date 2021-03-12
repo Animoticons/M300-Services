@@ -62,3 +62,7 @@ end`
 `config.vm.provision "shell", inline: <<-SHELL
  *Befehle Hier*
 SHELL`
+
+## Reflexion
+
+Dieses Modul war für mich sehr Aufschlussreich. Endlich weiss ich, wie GitHub genau funktioniert und wie ich eine Vorlage für virtuelle Maschinen schreibe und mit ihr dann viele VMs mit einem einzigen Befehl hochziehe. Während Vargant abgesehen von der verwirrenden und unübersichtlichen Syntax des Vagrantfile sehr hilfreich ist, finde ich die Git-Befehle nicht hilfreich, da ich auf einem Betriebsystem mit GUI und Browser einfach die Dateien via Drag-and-Drop hochladen kann, was wesentlich intuitiver ist.
