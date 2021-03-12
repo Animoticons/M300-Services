@@ -31,6 +31,11 @@ config.vm.provision "shell", inline: <<-SHELL
 }
 
 EOF
+
+  sudo cat >> ~/.ssh/authorized_keys << EOF #authorized_keys file beschreiben
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCw5E8kiE6WI6X3xBeivcF9PLNW/+0W909utU2XR/z5m8fnnry+TW0yNFWNUMCqL0aPQfW8Dzp/oGPet/um3D5mswA5AliL8n8BDpyRCfXss2l3EBkFqf21LYjd3P/2T6Ny0YGWZRNiMasyz9B4U4YR/P7gt6gXgp6TTSmKbUyqE0agNC7GTxVMWIt/OMdOLwxFpX7yyGBQn3FyYzPmzgJXLCXk7+khtpfXzA/tzywGOj4K1Mt72t2MBbMFMUgMBbIuqBIV30p6UvKp+Tf9KiDP2WKKtfAKVfiurteyjYKwDpth6Or7hdWxP9ktO5TFvQQ4uug7PoSOAfKzDvWxAUX3 lars@XMGLaptop
+EOF
+
  sudo ln -s /etc/nginx/sites-available/reverse-proxy.conf /etc/nginx/sites-enabled/reverse-proxy.conf #Verknüpfung zur Datei erstellen
 
   
